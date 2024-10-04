@@ -6,117 +6,248 @@ internal class Lab1
     {
         Lab1 program = new Lab1();
         Random random = new Random();
-        //1_1
-        Console.WriteLine(program.fraction(5.25));
-        Console.WriteLine();
-        //1_3
-        Console.WriteLine(program.charToNum('3'));
-        Console.WriteLine();
-        //1_5
-        Console.WriteLine(program.is2Digits(32));
-        Console.WriteLine(program.is2Digits(516));
-        Console.WriteLine();
-        //1_7
-        Console.WriteLine(program.isInRange(5,1,3));
-        Console.WriteLine(program.isInRange(2,15,33));
-        Console.WriteLine();
-        //1_9
-        Console.WriteLine(program.isEqual(3,3,3));
-        Console.WriteLine(program.isEqual(2,15,2));
-        Console.WriteLine();
-        //2_1
-        Console.WriteLine(program.abs(5));
-        Console.WriteLine(program.abs(-3));
-        Console.WriteLine();
-        //2_3
-        Console.WriteLine(program.is35(5));
-        Console.WriteLine(program.is35(8));
-        Console.WriteLine(program.is35(15));
-        Console.WriteLine();
-        //2_5
-        Console.WriteLine(program.max3(5,7,7));
-        Console.WriteLine(program.max3(8,-1,4));
-        Console.WriteLine();
-        //2_7
-        Console.WriteLine(program.sum2(5,7));
-        Console.WriteLine(program.sum2(8,-1));
-        Console.WriteLine();
-        //2_9
-        Console.WriteLine(program.day(5));
-        Console.WriteLine();
-        //3_1
-        Console.WriteLine(program.listNums(5));
-        Console.WriteLine();
-        //3_3
-        Console.WriteLine(program.chet(9));
-        Console.WriteLine();
-        //3_5
-        Console.WriteLine(program.numLen(12567));
-        Console.WriteLine();
-        //3_7
-        program.square(2);
-        program.square(5);
-        Console.WriteLine();
-        //3_9
-        program.rightTriangle(5);
-        Console.WriteLine();
-        //4_1
-        int[] findFirst = { 1, 2, 3, 4, 2, 2, 5 };
-        Console.WriteLine(program.findFirst(findFirst, 2));
-        Console.WriteLine();
-        //4_3
-        int[] mas2 = new int[10];
-        for (int i = 0; i < 10; i++)
-        {
-            mas2[i] = random.Next(-10, 11);
-        }
-        Console.WriteLine(string.Join(", ", mas2));
-        Console.WriteLine($"Результат: {program.maxAbs(mas2)}");
-        Console.WriteLine();
-        //4_5
-        int[] mas3 = new int[5];
-        for (int i = 0; i < 5; i++)
-        {
-            mas3[i] = random.Next(1, 11);
-        }
-        Console.WriteLine($"Исходный массив: [{string.Join(", ", mas3)}]");
+        int x, m, y, c, a;
+        bool repeat = true;
 
-        int[] mas32 = new int[4];
-        for (int i = 0; i < 4; i++)
+        while (repeat)
         {
-            mas32[i] = random.Next(1, 11);
-        }
-        Console.WriteLine($"Исходный массив: [{string.Join(", ", mas32)}]");
+            Console.WriteLine("\nВыберите раздел:");
+            Console.WriteLine("   1. Методы");
+            Console.WriteLine("   2. Условия");
+            Console.WriteLine("   3. Циклы");
+            Console.WriteLine("   4. Массивы");
+            Console.Write("Ваш выбор: ");
 
-        Console.WriteLine("Введите позицию a ");
-        int a3 = Convert.ToInt32(Console.ReadLine());
-        int[] result = program.add(mas3, mas32, a3);
-        Console.WriteLine($"Результат: [{string.Join(", ", result)}]");
-        Console.WriteLine();
-        //4_7
-        int[] mas4 = new int[10];
-        for (int i = 0; i < 10; i++)
-        {
-            mas4[i] = random.Next(1, 11);
-        }
-        Console.WriteLine($"Исходный массив: [{string.Join(", ", mas4)}]");
-        int[] reversed = program.reverseBack(mas4);
-        Console.WriteLine($"Результат: [{string.Join(", ", reversed)}]");
-        Console.WriteLine();
-        //4_9
-        int[] mas5 = new int[10];
-        for (int i = 0; i < 10; i++)
-        {
-            mas5[i] = random.Next(1, 11);
-        }
-        Console.WriteLine($"Исходный массив: [{string.Join(", ", mas5)}]");
+            x = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Введите число x ");
-        int a5 = Convert.ToInt32(Console.ReadLine());
-        int[] indices = program.findAll(mas5, a5);
-        Console.WriteLine($"Результат: Индексы вхождений {a5}: [{string.Join(", ", indices)}]");
+            switch (x)
+            {
+                case 1:
+                    Console.WriteLine("Введите цифру, которой нумеруется задача:\n   1. Дробная часть\n   2. Букву в число\n   3. Двузначное\n   4. Диапазон\n   5. Равенство");
+                    m = Convert.ToInt32(Console.ReadLine());
+                    switch (m)
+                    {
+                        case 1:
+                            Console.WriteLine("\"Дробная часть\" - Возврат дробной части числа\n Введите вещественное число");
+                            double m1;
+                            m1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.fraction(m1)}");
+                            break;
+                        case 2:
+                            Console.WriteLine("\"Букву в число\" - Преобразование символа в число\n Введите символ (от 0 до 9)");
+                            char m2;
+                            m2 = Convert.ToChar(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.charToNum(m2) - 48}");
+                            break;
+                        case 3:
+                            Console.WriteLine("\"Двузначное\" - Проверка на двузначность числа\n Введите число");
+                            int m3;
+                            m3 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.is2Digits(m3)}");
+                            break;
+                        case 4:
+                            Console.WriteLine("\"Диапазон\" - Проверка на вхождение числа в указанный диапазон");
+                            int m4l, m4r, num;
+                            Console.WriteLine("Введите левую и правую границы диаапазона и число");
+                            m4l = Convert.ToInt32(Console.ReadLine());
+                            m4r = Convert.ToInt32(Console.ReadLine());
+                            num = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.isInRange(m4l, m4r, num)}");
+                            break;
+                        case 5:
+                            Console.WriteLine("\"Равенство\" - Проверка равенства трех чисел\n Введите три числа");
+                            int m5a, m5b, m5c;
+                            m5a = Convert.ToInt32(Console.ReadLine());
+                            m5b = Convert.ToInt32(Console.ReadLine());
+                            m5c = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.isEqual(m5a, m5b, m5c)}");
+                            break;
+                        default:
+                            Console.WriteLine("Неправильный выбор задачи.");
+                            break;
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Введите цифру, которой нумеруется задача:\n   1. Модуль числа\n   2. Тридцать пять\n   3. Тройной максимум\n   4. Двойная сумма\n   5. День недели");
+                    y = Convert.ToInt32(Console.ReadLine());
+                    switch (y)
+                    {
+                        case 1:
+                            Console.WriteLine("\"Модуль числа\" - Возврат модуля числа\n Введите число");
+                            int y1;
+                            y1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.abs(y1)}");
+                            break;
+                        case 2:
+                            Console.WriteLine("\"Тридцать пять\" - Проверка деления нацело на 3 или 5\n Введите число");
+                            int y2;
+                            y2 = Convert.ToInt32(Console.ReadLine()); ;
+                            Console.WriteLine($"Результат: {program.is35(y2)}");
+                            break;
+                        case 3:
+                            Console.WriteLine("\"Тройной максимум\" - Поиск максимального из трех значений\n Введите три числа");
+                            int y3x, y3y, y3z;
+                            y3x = Convert.ToInt32(Console.ReadLine());
+                            y3y = Convert.ToInt32(Console.ReadLine());
+                            y3z = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.max3(y3x, y3y, y3z)}");
+                            break;
+                        case 4:
+                            Console.WriteLine("\"Двойная сумма\" - Возврат суммы чисел (если сумма от 10 до 19 - вернуть 20)\n Введите два числа");
+                            int y4a, y4b;
+                            y4a = Convert.ToInt32(Console.ReadLine());
+                            y4b = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.sum2(y4a, y4b)}");
+                            break;
+                        case 5:
+                            Console.WriteLine("\"День недели\"\n Введите число от 1 до 7");
+                            int y5;
+                            y5 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.day(y5)}");
+                            break;
+                        default:
+                            Console.WriteLine("Неправильный выбор задачи.");
+                            break;
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("Введите цифру, которой нумеруется задача:\n   1. Числа подряд\n   2. Четные числа\n   3. Длина числа\n   4. Квадрат\n   5. Правый треугольник");
+                    c = Convert.ToInt32(Console.ReadLine());
+                    switch (c)
+                    {
+                        case 1:
+                            Console.WriteLine("\"Числа подряд\" - Возврат чисел от 0 до x\n Введите х");
+                            int c1;
+                            c1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.listNums(c1)}");
+                            break;
+                        case 2:
+                            Console.WriteLine("\"Четные числа\" - Возврат четных чисел от 0 до х\n Введите х");
+                            int c2;
+                            c2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.chet(c2)}");
+                            break;
+                        case 3:
+                            Console.WriteLine("\"Длина числа\" - Возврат количества знаков в числе\n Введите число");
+                            long c3;
+                            c3 = long.Parse(Console.ReadLine()); ;
+                            Console.WriteLine($"Результат: {program.numLen(c3)}");
+                            break;
+                        case 4:
+                            Console.WriteLine("\"Квадрат\" - Вывод квадрата из '*' размерности х\n Введите х");
+                            int c4;
+                            c4 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Результат: ");
+                            program.square(c4);
+                            break;
+                        case 5:
+                            Console.WriteLine("\"Правый треугольник\" - Вывод выравненного по правому краю трегуольника из '*' высотой х\n Введите х");
+                            int c5;
+                            c5 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Результат: ");
+                            program.rightTriangle(c5);
+                            break;
+                        default:
+                            Console.WriteLine("Неправильный выбор задачи.");
+                            break;
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Введите цифру, которой нумеруется задача:\n   1. Поиск первого значения\n   2. Поиск максимального\n   3. Добавление массива в массив\n   4. Возвратный реверс\n   5. Все вхождения");
+                    a = Convert.ToInt32(Console.ReadLine());
+                    switch (a)
+                    {
+                        case 1:
+                            Console.WriteLine("\"Поиск первого значения\" - Возврат индекса первого вхождения числа в массив ");
+                            int[] mas1 = new int[10];
+                            for (int i = 0; i < 10; i++)
+                            {
+                                mas1[i] = random.Next(1, 11);
+                            }
+                            Console.WriteLine(string.Join(", ", mas1));
+                            Console.WriteLine("Введите x ");
+                            int a1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"Результат: {program.findFirst(mas1, a1)}");
+                            break;
+
+                        case 2:
+                            Console.WriteLine("\"Поиск максимального\" - Возврат наибольшего по модулю значения массива");
+                            int[] mas2 = new int[10];
+                            for (int i = 0; i < 10; i++)
+                            {
+                                mas2[i] = random.Next(-10, 11);
+                            }
+                            Console.WriteLine(string.Join(", ", mas2));
+                            Console.WriteLine($"Результат: {program.maxAbs(mas2)}");
+                            break;
+
+                        case 3:
+                            Console.WriteLine("\"Добавление массива в массив\" - Добавление массива х в массив у с позиции а");
+
+                            int[] mas3 = new int[5];
+                            for (int i = 0; i < 5; i++)
+                            {
+                                mas3[i] = random.Next(1, 11);
+                            }
+                            Console.WriteLine($"Исходный массив: [{string.Join(", ", mas3)}]");
+
+                            int[] mas32 = new int[4];
+                            for (int i = 0; i < 4; i++)
+                            {
+                                mas32[i] = random.Next(1, 11);
+                            }
+                            Console.WriteLine($"Исходный массив: [{string.Join(", ", mas32)}]");
+
+                            Console.WriteLine("Введите позицию a ");
+                            int a3 = Convert.ToInt32(Console.ReadLine());
+                            int[] result = program.add(mas3, mas32, a3);
+                            Console.WriteLine($"Результат: [{string.Join(", ", result)}]");
+                            break;
+
+                        case 4:
+                            Console.WriteLine("\"Возвратный реверс\" - Возврат массива, в котором значения записаны задом наперед");
+                            int[] mas4 = new int[10];
+                            for (int i = 0; i < 10; i++)
+                            {
+                                mas4[i] = random.Next(1, 11);
+                            }
+                            Console.WriteLine($"Исходный массив: [{string.Join(", ", mas4)}]");
+                            int[] reversed = program.reverseBack(mas4);
+                            Console.WriteLine($"Результат: [{string.Join(", ", reversed)}]");
+                            break;
+
+                        case 5:
+                            Console.WriteLine("\"Все вхождения\" - Вывод индексов всех вхождений числа х в массив");
+
+                            int[] mas5 = new int[10];
+                            for (int i = 0; i < 10; i++)
+                            {
+                                mas5[i] = random.Next(1, 11);
+                            }
+                            Console.WriteLine($"Исходный массив: [{string.Join(", ", mas5)}]");
+
+                            Console.WriteLine("Введите число x ");
+                            int a5 = Convert.ToInt32(Console.ReadLine());
+                            int[] indices = program.findAll(mas5, a5);
+                            Console.WriteLine($"Результат: Индексы вхождений {a5}: [{string.Join(", ", indices)}]");
+                            break;
+                        default:
+                            Console.WriteLine("Неправильный выбор задачи.");
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Выберите представленные разделы.");
+                    break;
+            }
+
+            Console.Write("\nХотите продолжить работу? (1 - да, 0 - нет):");
+
+            string continueChoice = Console.ReadLine();
+
+            repeat = (continueChoice.ToLower() != "0");
+        }
     }
-
     //1_1
     public double fraction(double x)
     {
