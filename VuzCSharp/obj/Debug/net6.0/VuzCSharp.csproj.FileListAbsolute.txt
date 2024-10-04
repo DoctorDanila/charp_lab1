@@ -1,0 +1,15 @@
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\bin\Debug\net6.0\VuzCSharp.exe
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\bin\Debug\net6.0\VuzCSharp.deps.json
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\bin\Debug\net6.0\VuzCSharp.runtimeconfig.json
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\bin\Debug\net6.0\VuzCSharp.dll
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\bin\Debug\net6.0\VuzCSharp.pdb
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.csproj.AssemblyReference.cache
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.AssemblyInfoInputs.cache
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.AssemblyInfo.cs
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.csproj.CoreCompileInputs.cache
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.dll
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\refint\VuzCSharp.dll
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.pdb
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\VuzCSharp.genruntimeconfig.cache
+C:\Users\имя\Desktop\вуз\cpp\VuzCSharp\VuzCSharp\obj\Debug\net6.0\ref\VuzCSharp.dll
